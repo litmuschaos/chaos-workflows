@@ -64,7 +64,7 @@ Argo integration with LitmusChaos to create Chaos Workflows
 
 # Argo
 
-* Please install argo cmdline mentioned above on Pre-req
+* Please install argo cmdline `https://github.com/argoproj/homebrew-tap` and mentioned argo setup on Pre-req 
 * Setup the argo user service account, cluster role and role binding 
 * Go to Argo folder and execute `kubectl apply -f argo-access.yaml`
 * Validate the user exists `kubectl get sa`

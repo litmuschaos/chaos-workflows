@@ -77,9 +77,11 @@ Argo integration with LitmusChaos to create Chaos Workflows
 * You can pass command line arguments to override values
 * Execute `argo submit argo-chaos.yaml`
 * Validate via `argo watch <argo pod>`
+![Argo with service](IMG/chaos.png)
 
 ### Remote namespace - Admin use case
 * Argo submit will bring to state, it will add role and delete it after the execution
 * You can pass command line arguments to override values
 * Execute `argo submit argo-chaos-admin.yaml`
 * Validate via `argo watch <argo pod>`
+![Argo with admin](IMG/chaos-admin.png)

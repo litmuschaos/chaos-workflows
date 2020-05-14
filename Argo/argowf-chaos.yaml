@@ -120,7 +120,7 @@ spec:
                           - name: REPORT
                             value: 'true'
                           - name: REPORT_ENDPOINT
-                            value: 'https://eventbus-e2e.intuit.com/v2/ip-quality-reliability-realtime-prf'
+                            value: 'none'
       container:
         image: lachlanevenson/k8s-kubectl
         command: [sh, -c]
@@ -218,7 +218,7 @@ spec:
                           - name: REPORT
                             value: 'true'
                           - name: REPORT_ENDPOINT
-                            value: 'https://eventbus-e2e.intuit.com/v2/ip-quality-reliability-realtime-prf'
+                            value: 'none'
       container:
         image: lachlanevenson/k8s-kubectl
         command: [sh, -c]

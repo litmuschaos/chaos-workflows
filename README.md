@@ -7,7 +7,7 @@ Argo integration with LitmusChaos to create Chaos Workflows
 ## Argo Work Flow 
 * Please refer the link `https://github.com/argoproj/argo/tree/master/manifests` for Argo installtion
 ### Validation 
-* Validate the Argo installation via below 
+* Validate the Argo installation via below \
 * export KUBECONFIG `export KUBECONFIG=/Users/<>/.kube/<your kubeconfig>`
 * Verify CRDS - `kubectl get crds | grep argo`
 * Validate api-resource created - `kubectl api-resources | grep argo`

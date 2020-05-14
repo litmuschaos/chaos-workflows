@@ -7,7 +7,7 @@ Argo integration with LitmusChaos to create Chaos Workflows
 ## Argo Work Flow 
 * Please refer the link `https://github.com/argoproj/argo/tree/master/manifests` for Argo installtion
 ### Validation 
-* Validate the litmus installation via below 
+* Validate the Argo installation via below \
 * export KUBECONFIG `export KUBECONFIG=/Users/<>/.kube/<your kubeconfig>`
 * Verify CRDS - `kubectl get crds | grep argo`
 * Validate api-resource created - `kubectl api-resources | grep argo`
@@ -25,7 +25,7 @@ Argo integration with LitmusChaos to create Chaos Workflows
 
 
 # Application  
-* Go to App folder and install nginx, service and ingress based of your kubernetes setuo
+* Go to App folder and install nginx, service and ingress based of your kubernetes setup
 * `kubectl apply -f nginx.yaml`
 * `kubectl apply -f service.yaml` [ Optional]
 * `kubectl apply -f ingress.yaml` [ Optional]
@@ -34,14 +34,14 @@ Argo integration with LitmusChaos to create Chaos Workflows
 
 ## ChaosToolkit Experiment
 * Please refer the link to install the chaostoolkit experiment `https://hub.litmuschaos.io/charts/chaostoolkit` 
-* Follow detail steps after `https://github.com/litmuschaos/chaos-charts/blob/master/charts/chaostoolkit/Readme.md` 
+* Detail steps are here `https://github.com/litmuschaos/chaos-charts/blob/master/charts/chaostoolkit/Readme.md` 
 * You have to checkout the chaos-charts `https://github.com/litmuschaos/chaos-charts/tree/master/charts/chaostoolkit`
-* After you have the code 
+* After you have the code execute below
 
 ## In Namespace Changes - Service use case
-* This use case assume you want to execute the chaos pod in same namespace
-* Apply experiments for k8 - `kubectl apply -f experiments.yaml`
-* Validate the experiments for k8 - `kubectl get chaosexperiment`
+* This use case assume you want to execute the chaos experiment in same namespace
+* Apply experiments for kubernetes - `kubectl apply -f experiments.yaml`
+* Validate the experiments for kubernetes - `kubectl get chaosexperiment`
 * Setup RBAC - for pod delete RBAC - `kubectl apply -f rbac.yaml`
 * Create pod Experiment - for health experiment -`kubectl create -f engine.yaml`
 * Validate experiment - `kubectl get pods -w`
@@ -64,7 +64,7 @@ Argo integration with LitmusChaos to create Chaos Workflows
 
 # Argo
 
-* Please install argo cmdline mentioned above on Pre-req
+* Please install argo cmdline `https://github.com/argoproj/homebrew-tap` and mentioned argo setup on Pre-req 
 * Setup the argo user service account, cluster role and role binding 
 * Go to Argo folder and execute `kubectl apply -f argo-access.yaml`
 * Validate the user exists `kubectl get sa`

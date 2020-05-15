@@ -25,9 +25,10 @@ that explain the procedure to construct your own chaos workflows.
 
 The subsequent section explains how to get started with a simple chaos workflow that disrupts (via pod-delete chaos) a multi-replica 
 nginx deployment while a load generator generates benchmark traffic against it. The typical usecase for such a chaos workflow as this 
-is to be able to observe the extent of degradation in completed requests & request rate (resiliency & perf indicators). Users can play
-around the benchmark as well as chaos parameters as part of a detailed experiment to understand application behaviour & fix the 
-bugs/deployment issues and arrive at achievable SLAs. 
+is to be able to observe the extent of degradation in completed requests & request rate (resiliency & perf indicators). 
+
+Users can play around the benchmark as well as chaos parameters as part of a detailed experiment to understand application behaviour 
+& fix the bugs/deployment issues and arrive at achievable SLAs. 
 
 ### Install Argo Workflow Infrastructure
 
@@ -207,5 +208,7 @@ all chaos resources will be created in the centralized namespace, litmus.
   service/argo-server patched
   ```
 
+  ![image](https://user-images.githubusercontent.com/21166217/82098260-38738b00-9722-11ea-81b4-b3c466a60080.png)
 
+  
 

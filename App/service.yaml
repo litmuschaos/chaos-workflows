@@ -4,8 +4,9 @@ metadata:
   name: nginx
 spec:
   ports:
-    - port: 443
-      targetPort: 8443
+  - port: 80
+    protocol: TCP
+    targetPort: 80
   selector:
     app: nginx
   type: NodePort

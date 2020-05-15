@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  labels:
+    app: nginx-bench
+  generateName: nginx-bench-
+spec:
+  template:
+    metadata:
+      labels:
+        app: nginx-bench
+    spec:
+      restartPolicy: Never
+      containers:
+      - args:
+        - -c
+        - /go/bin/main -r -c10 -t${BENCHMARK_DURATION} -n 10000000 http://${NGINX_SVC_NAME}:${NGINX_PORT_NUM}/; exit 0
+        command: 
+        - /bin/sh
+        env:
+          - name: NGINX_SVC_NAME
+            value: "nginx.default.svc.cluster.local"
+          - name: NGINX_PORT_NUM
+            value: "80"
+          - name: BENCHMARK_DURATION
+            value: "60"
+        image: devth/alpine-bench
+        imagePullPolicy: Always
+        name: nginx-bench

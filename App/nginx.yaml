@@ -21,6 +21,5 @@ spec:
         imagePullPolicy: Always
         name: nginx
         ports:
-        - containerPort: 8443
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
+        - containerPort: 80
+          protocol: TCP

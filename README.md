@@ -211,4 +211,41 @@ all chaos resources will be created in the centralized namespace, litmus.
   ![image](https://user-images.githubusercontent.com/21166217/82098260-38738b00-9722-11ea-81b4-b3c466a60080.png)
 
   
+### Running Chaos experiments from a Jenkins pipeline
 
+- setting up jenkins job and triggering the argo workflow from Jenkins. This will have the benefits of running the tests as a pipeline, schedule it store the results, run as downstream etc.
+
+- Steps
+  1. Create the KUBECONFIG using the token from the `argo-chaos` service account
+  2. Connect to namespace where you created the argo-chaos service account and execute below command to get the token
+  ```
+  APISERVER=$(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}')
+  SECRET_NAME=$(kubectl get serviceaccount $SERVICE_ACCOUNT -o jsonpath='{.secrets[0].name}')
+  TOKEN=$(kubectl get secret $SECRET_NAME -o jsonpath='{.data.token}' | base64 --decode)
+  ```
+  3. Create the KUBECONFIG using the above token
+  ```
+  apiVersion: v1
+  clusters:
+  - cluster:
+      certificate-authority-data: asjdsajkdsajdhkjsadhak==
+      server: https://api-abcdef-ppd-usw2-12345678.us-west-2.elb.amazonaws.com
+    name: abcdef-ppd-usw2.cluster.k8s.local
+  contexts:
+  - context:
+      cluster: 'abcdef-ppd-usw2.cluster.k8s.local'
+      namespace: 'abcdef-perf-infra-usw2-ppd-pfi'
+      user: 'argo-chaos'
+    name: service-account
+  current-context: service-account
+  kind: Config
+  preferences: {}
+  users:
+  - name: 'argo-chaos'
+    user:
+      token: '<token here>'
+  ```
+  4. Upload the KUBECONFIG file in `credentials` section in Jenkins as `secret file` - refer below screenshot
+  5. Setup the Jenkins job and refer the `Jenkinsfile`
+  6. Once all setup complete you can trigger the Jenkins job
+  ![image](https://user-images.githubusercontent.com/chaos-litmus-jenkins.png)

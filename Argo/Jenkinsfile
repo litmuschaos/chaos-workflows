@@ -90,7 +90,7 @@ podTemplate(name: ptNameVersion, label: ptNameVersion, containers: [
                             cp \${ARGO_CHAOS} \${HOME}/.kube/config
                             """
                             sh("argo list --kubeconfig \${HOME}/.kube/config")
-                            sh("argo submit litmus/load-tests/argowf-chaos.yaml -pappNamespace=dev-tools-fmea-test-4-usw2-ppd-prf -pappLabel=fmea-test-4  --watch")
+                            sh("argo submit Argo/argowf-chaos-admin.yaml -pappNamespace=test-namespace -pappLabel=fmea-test-4  --watch")
                             sh("argo list")
                         }
                     }

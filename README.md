@@ -248,4 +248,4 @@ all chaos resources will be created in the centralized namespace, litmus.
   4. Upload the KUBECONFIG file in `credentials` section in Jenkins as `secret file` - refer below screenshot
   5. Setup the Jenkins job and refer the `Jenkinsfile`
   6. Once all setup complete you can trigger the Jenkins job
-  ![image](https://user-images.githubusercontent.com/chaos-litmus-jenkins.png)
+     ![Jenkins Pipeline argo](IMG/chaos-litmus-jenkins.png)

@@ -23,7 +23,7 @@ spec:
           - name: NGINX_PORT_NUM
             value: "80"
           - name: BENCHMARK_DURATION
-            value: "60"
+            value: "300"
         image: devth/alpine-bench
         imagePullPolicy: Always
         name: nginx-bench

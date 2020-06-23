@@ -73,7 +73,7 @@ spec:
               metadata:
                 labels:
                   app: nginx-bench
-                name: nginx-bench
+                generateName: nginx-bench-
               spec:
                 template:
                   metadata:
@@ -100,7 +100,7 @@ spec:
       container:
         image: lachlanevenson/k8s-kubectl
         command: [sh, -c]
-        args: ['kubectl apply -f /tmp/bench.yaml -n {{workflow.parameters.appNamespace}}']
+        args: ['kubectl create -f /tmp/bench.yaml -n {{workflow.parameters.appNamespace}}']
 
     - name: revert-chaos
       container:

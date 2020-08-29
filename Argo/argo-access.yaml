@@ -25,9 +25,4 @@ roleRef:
   name: chaos-cluster-role
 subjects:
 - kind: ServiceAccount
-  name: argo-chaos
-  namespace: litmus
-
-
-    
-    
+  name: argo-chaos   

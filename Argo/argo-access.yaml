@@ -26,3 +26,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: argo-chaos   
+  namespace: litmus

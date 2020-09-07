@@ -18,12 +18,12 @@ spec:
   templates:
     - name: argowf-chaos
       steps:
-        - - name: run-chaos
-            template: run-chaos
-          - name: run-benchmark
-            template: run-benchmark
-        - - name: revert-chaos
-            template: revert-chaos
+        - name: run-chaos
+          template: run-chaos
+          name: run-benchmark
+          template: run-benchmark
+        - name: revert-chaos
+          template: revert-chaos
 
     - name: run-chaos
       inputs:

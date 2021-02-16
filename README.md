@@ -21,6 +21,11 @@ creation of a whole lot of chaos workflow models while being extremely simple & 
 This repository hosts predefined workflows based on LitmusChaos experiments you can pick for use, while also the dev/usage docs
 that explain the procedure to construct your own chaos workflows.
 
+You can refer to this following presentation made by [Michael Knyazev](https://github.com/mikhailknyazev) during the chaos carnival 2021 about 
+how chaos workflows were used in constructing reliability pipelines on AKS.
+
+[![Building Reliability Pipelines with Chaos Workflows](IMG/reliability_pipeline_chaos_workflows.png)](https://www.youtube.com/watch?v=7yBFgqUo01E "Building Reliability Pipelines with Chaos Workflows")
+
 ## Getting Started
 
 The subsequent section explains how to get started with a simple chaos workflow that disrupts (via pod-delete chaos) a multi-replica 

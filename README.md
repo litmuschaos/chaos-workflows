@@ -21,8 +21,8 @@ creation of a whole lot of chaos workflow models while being extremely simple & 
 This repository hosts predefined workflows based on LitmusChaos experiments you can pick for use, while also the dev/usage docs
 that explain the procedure to construct your own chaos workflows.
 
-You can refer to this following presentation made by [Michael Knyazev](https://github.com/mikhailknyazev) during the chaos carnival 2021 about 
-how chaos workflows were used in constructing reliability pipelines on AKS.
+You can refer to the following presentation made by [Michael Knyazev](https://www.linkedin.com/public-profile/in/mikhailkniazev) during the Chaos Carnival 2021 about 
+how Chaos Workflows can be used in constructing Reliability Pipelines on Amazon EKS.
 
 [![Building Reliability Pipelines with Chaos Workflows](IMG/reliability_pipeline_chaos_workflows.png)](https://www.youtube.com/watch?v=7yBFgqUo01E "Building Reliability Pipelines with Chaos Workflows")
 

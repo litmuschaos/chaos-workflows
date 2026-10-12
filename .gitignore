@@ -1,0 +1,25 @@
+# Kubernetes credentials
+kubeconfig
+kubeconfig_*
+*.kubeconfig
+
+# Environment — may contain secrets
+.env
+.env.*
+!.env.example
+
+# Rendered or temporary manifests
+*.tmp.yaml
+*.bkp
+
+# Logs
+*.log
+
+# Editors
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
